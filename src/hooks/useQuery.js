@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-
 // take in the url
 function useQuery(url) {
   const [isLoaded, setIsLoaded] = useState(false);
   // rename `posts` to a more generic `data`
   const [data, setData] = useState(null);
+  const [posts] = useState(null);
 
   useEffect(() => {
     setIsLoaded(false);
@@ -20,6 +20,7 @@ function useQuery(url) {
 
   // return an *object* with the data and isLoaded state
   return { data, isLoaded };
+  return { posts, isLoaded };
 }
 
 export default useQuery;
